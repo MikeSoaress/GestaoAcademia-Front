@@ -1,0 +1,80 @@
+.item-cadastro {
+    margin-top: 1.3rem !important;
+    margin-left: 10px;
+}
+
+
+label {
+    margin-bottom: 0.5rem;
+}
+
+.bloco-3 {
+    background-color: #dfe2e6;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    left: 0px;
+    padding: 10px;
+    box-shadow: 0px 0px 1px 0px #2d2d2d;
+}
+
+.bloco {
+    margin-bottom: 2rem;
+    background-color: #efefef96;
+    box-shadow: 0px 0px 1px 0px #0000005c;
+}
+
+.titulo-bloco {
+    background-color: #eaeaea;
+    margin: 0px;
+    color: #25282f;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    box-shadow: 0px 0px 1px 0px #0000005e;
+}
+
+.icone-seta {
+    width: 20px;
+    height: 20px;
+    transform: rotate(0deg);
+    transition: transform 0.1s ease;
+}
+
+.icone-seta-ativa {
+    transform: rotate(90deg);
+    transition: transform 0.1s ease;
+}
+
+.grupo-itens {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem 1rem 3rem 1rem;
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0.09s ease, opacity 0.07s ease;
+}
+
+.ocultar-colapse {
+    padding: 0px;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.09s ease, opacity 0.07s ease;
+}
+
+#titulo {
+    margin-bottom: 2rem;
+    color: #25282f;
+}
+
+
+@media screen and (max-width: 768px) {
+    .bloco-3 {
+        position: fixed;
+    }
+}

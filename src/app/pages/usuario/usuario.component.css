@@ -1,0 +1,41 @@
+
+#bloco-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#bloco-2 {
+    margin-top: 2rem;
+    display: flex;
+}
+
+#bloco-3 {
+    margin-top: 4rem;
+    padding: 1rem;
+    font-size: 0.rem;
+}
+
+#bloco-4 {
+    text-align: center;
+    background-color: white;
+    padding: 1rem;
+}
+
+#caixa-pesquisa{
+    max-width: 500px;
+    width: 100%;
+}
+
+.btn-menu{
+    cursor: pointer;
+}
+
+.btn-light-red{
+    background-color: #ffeded;
+    color:#ae3c3c
+}
+
+.btn-light-red:hover{
+    background-color: #ffc9c9;
+}
+

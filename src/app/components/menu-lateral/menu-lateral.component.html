@@ -1,0 +1,40 @@
+<div id="container-menu" class="menu-off">
+    <div id="container-alterna-menu">
+        <img id="icone-alterna-menu" class="mb-2 " src="assets/images/menu.png" (click)="alternaMenu()">
+    </div>
+    <div id="menu-ocultavel" class="ocultar">
+        <div class="text-center mb-4 mt-3">
+            <img id="imagem-usuario" class="mb-2" src="assets/images/IMG_USUARIO.png"><br>
+            <span>Olá, Mike</span><br>
+            <span (click)="btnSairClick()" id="btn-sair">Sair</span>
+        </div>
+        <hr>
+        <button class="item-menu">
+            <img class="icone-menu" src="assets/images/equipe.png">
+            <span routerLink="/usuario">Usuários</span>
+        </button>
+        <div id="menu_completo_1">
+            <button name="menu" class="item-menu-colapse" (click)="alternaSubMenu('menu_completo_1')">
+                <div>
+                    <img class="icone-menu" src="/assets/images/cardapio.png">
+                    <span class="legenda">Users</span>
+                </div>
+                <div>
+                    <img name="icone_menu" class="icone-seta" src="/assets/images/seta-direita.png">
+                </div>
+            </button>
+            <div name="submenu" class="sub-menu-off">
+                <div class="item-menu">
+                    <span routerLink="/usuario">Usuários</span>
+                </div>
+                <div class="item-menu">
+                    <span routerLink="/adicionar-usuario">Novo usuário</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="alterna-menu-mobile">
+    <img id="icone-alterna-menu" src="/assets/images/menu.png" (click)="alternaMenu()">
+</div>

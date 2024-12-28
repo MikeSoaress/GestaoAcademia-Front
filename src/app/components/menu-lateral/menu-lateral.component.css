@@ -1,0 +1,125 @@
+.menu-on {
+    background-color: #25282f;
+    height: 100vh;
+    color: white;
+    padding-top: 20px;
+    width: 200px;
+    transition: width 0.2s ease;
+}
+
+.menu-off {
+    background-color: #25282f;
+    height: 100vh;
+    color: white;
+    padding-top: 20px;
+    width: 60px;
+    transition: width 0.2s ease;
+}
+
+#alterna-menu-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-off {
+        height: 100vh;
+        width: 0px;
+        transition: width 0.2s ease;
+    }
+
+    #alterna-menu-mobile {
+        width: 100%;
+        height: 50px;
+        background-color: #25282f;
+        top: 0px;
+        position: fixed;
+        left: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        box-shadow: 0px 0px 2px 0px #25282f;
+    }
+}
+
+#container-alterna-menu {
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+}
+
+#icone-alterna-menu {
+    width: 22px;
+    margin-right: 20px;
+}
+
+#imagem-usuario {
+    width: 80px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 3px 0px #ffffff;
+}
+
+.item-menu {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.item-menu-colapse {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.item-menu-colapse-on {
+    background-color: #3d3f43;
+}
+
+.sub-menu-off {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease;
+}
+
+.sub-menu-on {
+    padding-left: 14px;
+    background-color: #2f3137;
+    opacity: 1;
+    max-height: 300px;
+}
+
+.icone-seta {
+    width: 15px;
+    transform: rotate(0deg);
+    transition: transform 0.1s ease;
+}
+
+.icone-menu {
+    width: 20px;
+    margin-right: 6px;
+}
+
+.icone-menu-aberto {
+    transform: rotate(90deg);
+    transition: transform 0.1s ease;
+}
+
+button {
+    width: 100%;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+#btn-sair {
+    font-size: 0.8rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.ocultar {
+    display: none;
+}

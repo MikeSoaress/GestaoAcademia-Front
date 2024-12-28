@@ -1,12 +1,31 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
+import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MenuLateralComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // Corrigido de "styleUrl" para "styleUrls"
 })
+
 export class AppComponent {
-  title = 'acamdemia';
+  constructor(private router: Router,  private authService: AuthService) { }
+  title = 'cozinha';
+  currentUrl: string = '';
+
+  ngOnInit(): void {
+    if(!this.authService.isAuthenticated())
+      this.router.navigate(['/login']);
+
+    this.router.events.subscribe(() => {
+      this.currentUrl = this.router.url; // URL atual
+    });
+  }
 }
+
+
+
+

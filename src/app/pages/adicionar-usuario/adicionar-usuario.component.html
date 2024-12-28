@@ -1,0 +1,52 @@
+<div id="container-pagina-principal">
+    <div id="sub-container-pagina-principal">
+        <div id="bloco-principal">
+            <h3 id="titulo">Novo usuário</h3>
+            <hr>
+            <div class="bloco" id="bloco-1">
+                <button (click)="alternaColapse('bloco-1')" class="titulo-bloco">
+                    <h5>Dados basicos</h5>
+                    <img name="icone_menu" class="icone-seta icone-seta-ativa" src="/assets/images/seta-direita.png">
+                </button>
+                <div class="grupo-itens">
+                    <div class="item-cadastro col-md-8 col-11">
+                        <label>Nome</label>
+                        <input id="txt-nome" type="text" class="form-control " placeholder="Nome">
+                    </div>
+                    <div class="item-cadastro col-md-8 col-11">
+                        <label>Email</label>
+                        <input id="txt-nome" type="text" class="form-control " placeholder="Email">
+                    </div>
+                    <div class="item-cadastro col-md-3 col-11">
+                        <label>Telefone</label>
+                        <input id="txt-nome" type="text" class="form-control " placeholder="Telefone">
+                    </div>
+                </div>
+            </div>
+            <div class="bloco" id="bloco-2">
+                <button (click)="alternaColapse('bloco-2')" class="titulo-bloco">
+                    <h5>Credenciais de acesso</h5>
+                    <img name="icone_menu" class="icone-seta" src="/assets/images/seta-direita.png">
+                </button>
+                <div class="grupo-itens ocultar-colapse">
+                    <div class="item-cadastro col-md-8 col-11">
+                        <label>Nome</label>
+                        <input id="txt-nome" type="text" class="form-control " placeholder="Nome">
+                    </div>
+                    <div class="item-cadastro col-md-8 col-11">
+                        <label>Email</label>
+                        <input id="txt-nome" type="text" class="form-control " placeholder="Email">
+                    </div>
+                    <div class="item-cadastro col-md-3 col-11">
+                        <label>Telefone</label>
+                        <input id="txt-nome" type="text" class="form-control " placeholder="Telefone">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bloco-3 centraliza">
+            <input type="button" class="btn btn-danger" value="Cancelar">
+            <input type="button" class="btn btn-primary ml-1" value="Salvar">
+        </div>
+    </div>
+</div>

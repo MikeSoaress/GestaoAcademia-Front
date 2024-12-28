@@ -1,0 +1,59 @@
+<div id="container-pagina-principal">
+    <div id="sub-container-pagina-principal">
+        <div id="bloco-principal">
+            <div id="bloco-1">
+                <h3>Usuários</h3>
+                <button class="btn btn-dark" routerLink="/adicionar-usuario">Adicionar novo</button>
+            </div>
+            <div id="bloco-2">
+                <input id="caixa-pesquisa" type="text" class="form-control" placeholder="Pesquisa por Código, Descrição, Data....">
+                <button type="button" class="btn btn-secondary ml-1">Pesquisar</button>
+            </div>
+            <div id="bloco-3" class="d-flex">           
+                <div class="btn btn-light">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <span class="ml-1">Selecionar Tudo</span>
+                </div>
+                <div class="btn btn-light-red ml-1 centraliza">
+                    <img class="btn-menu" src="/assets/images/excluir-vermelho.png">
+                    <span class="ml-1">Excluir itens selecionados</span>
+                </div>
+            </div>
+            <div id="bloco-4">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Data</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>teste</td>
+                            <td>
+                                <img class="btn-menu" src="/assets/images/editar.png">
+                                <img class="btn-menu ml-1" src="/assets/images/excluir.png">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"></th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>teste</td>
+                            <td>
+                                <img class="btn-menu" src="/assets/images/editar.png">
+                                <img class="btn-menu ml-1" src="/assets/images/excluir.png">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

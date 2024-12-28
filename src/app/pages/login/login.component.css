@@ -1,0 +1,51 @@
+.form-control:focus {
+    color: var(--cor-primaria)var(--cor);
+    background-color: var(--bs-body-bg);
+    border-color: var(--cor-primaria);
+    outline: 0;
+    box-shadow: none;
+}
+
+#card {
+    background: linear-gradient(to bottom, #25282f6b, #25282f17, #25282f6b);
+    height: 100vh !important;
+}
+
+#card-left {
+    color: white;
+    width: 40vw;
+    height: 80%;
+    background-color: var(--cor-primaria);
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0px 0px 2px 0px #0000001a;
+}
+
+#card-right {
+    width: 40vw;
+    height: 80%;
+    padding: 10px;
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 0px 0px 2px 0px #0000001a;
+    background-color: #fefefeba;
+}
+
+#container-mobile {
+    height: 100vh;
+    background: linear-gradient(to bottom, #25282f6b, #25282f17, #25282f6b);
+}
+
+#card-mobile {
+    background-color: #fefefeba;
+    box-shadow: 0px 0px 2px 0px #ffffff80;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#titulo-mobile {
+    background-color: #25282f;
+    border-radius: 10px 10px 0px 0px;
+    padding: 8px;
+    color: white;
+    border: solid 1px #25282f2e;
+}
