@@ -1,17 +1,28 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { MenuService } from '../../services/menu.service';
+import { Menu } from '../../models/menu.interface';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from "@angular/router";
 @Component({
     selector: 'app-menu-lateral',
     templateUrl: './menu-lateral.component.html',
+    imports: [CommonModule, RouterModule],
     styleUrls: ['./menu-lateral.component.css'],
     standalone: true
 })
 export class MenuLateralComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private menuService: MenuService) { }
+  arrayMenu: Menu[] = []; 
 
   ngOnInit(): void {
+    this.getMenu();
+  }
+
+  getMenu(): void {
+    this.arrayMenu = this.menuService.getMenus();
+    console.log(this.arrayMenu);
   }
 
   alternaSubMenu(id: string): void {
@@ -35,12 +46,15 @@ export class MenuLateralComponent implements OnInit {
       elemento_menu?.classList.remove('item-menu-colapse-on');
       icone_seta?.classList.remove('icone-menu-aberto');
     }
+
+
   }
 
   alternaMenu(): void {
     var elementos_menu = document.getElementById('menu-ocultavel');
     var base_menu = document.getElementById('container-menu');
     var menu_ativo: boolean = elementos_menu?.classList.contains('ocultar') ? false : true;
+    var menus = localStorage.getItem('menus');
 
     menu_ativo ? desabilitarMenu() : habilitarMenu();
 

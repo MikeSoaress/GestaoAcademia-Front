@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -44,5 +45,22 @@ export class AuthService {
   getToken(): string{
     const token = '' +  localStorage.getItem('token')?.toString();
     return token;
+  }
+
+  isTokenValid(token: string): boolean {
+    try
+     {
+      const decoded: any = jwtDecode(token);
+      const currentTime = Math.floor(Date.now() / 1000);
+      return decoded.exp > currentTime; 
+    } 
+    catch (error) {
+      return false;
+    }
+  }
+
+  getUserRoles(token: string): string[] {
+    const decoded: any = jwtDecode(token);
+    return decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] || []; 
   }
 }
