@@ -1,51 +1,50 @@
 @if(abrirIconeCarregando)
 {
-    <app-carregando></app-carregando>
+<app-carregando></app-carregando>
 }
 
 @if(textoDeAviso)
 {
-    <div>
-        <app-aviso [mensagem]="textoDeAviso" (actionBtnOk)="ocultarAviso()"></app-aviso>
-    </div>
+<div>
+    <app-aviso [mensagem]="textoDeAviso" (actionBtnOk)="ocultarAviso()"></app-aviso>
+</div>
 }
 
 @if(!acessoMobile)
 {
-    <div id="desktop">
-        <div id="card" class="centraliza">
-            <div id="card-left" class="centraliza">
-                <div class="text-center">
-                    <h3 class="mb-3">Bem vindo</h3>
-                </div>
+<div id="desktop">
+    <div id="card" class="centraliza">
+        <div id="card-left" class="centraliza">
+            <div class="text-center">
+                <h3 class="mb-3">Bem vindo</h3>
             </div>
-            <div id="card-right" class="centraliza">
-                <div (keydown.enter)="login()">
-                    <h3 class="mb-4 color-primaria">Acesse a plataforma</h3>
-                    <input class="form-control" [(ngModel)]="username" type="text" placeholder="Login">
-                    <input class="form-control mt-2" [(ngModel)]="password" type="password" placeholder="Senha">
-                    <div class="text-center mt-2">
-                        <button class="btn  text-center botao-padrao" (click)="login()">Entrar</button>
-                    </div>
+        </div>
+        <div id="card-right" class="centraliza">
+            <div (keydown.enter)="login()">
+                <h3 class="mb-4 color-primaria">Acesse a plataforma</h3>
+                <input class="form-control" [(ngModel)]="username" type="text" placeholder="Login">
+                <input class="form-control mt-2" [(ngModel)]="password" type="password" placeholder="Senha">
+                <div class="text-center mt-2">
+                    <button class="btn  text-center botao-padrao" (click)="login()">Entrar</button>
                 </div>
             </div>
         </div>
     </div>
+</div>
 }
 
 @else
 {
-    <div>
-        <div id="container-mobile" class="centraliza">
-            <div id="card-mobile">
-                <h4 id="titulo-mobile">Bem vindo</h4>
-                <div class="p-4">
-                    <input class="form-control" [(ngModel)]="username" type="text" placeholder="Login">
-                    <input class="form-control mt-2" [(ngModel)]="password" type="password" placeholder="Senha">
-                    <button class="btn text-center botao-padrao mt-3" (click)="login()">Entrar</button>
-                </div>
+<div>
+    <div id="container-mobile" class="centraliza">
+        <div id="card-mobile">
+            <h4 id="titulo-mobile">Bem vindo</h4>
+            <div class="p-4">
+                <input class="form-control" [(ngModel)]="username" type="text" placeholder="Login">
+                <input class="form-control mt-2" [(ngModel)]="password" type="password" placeholder="Senha">
+                <button class="btn text-center botao-padrao mt-3" (click)="login()">Entrar</button>
             </div>
         </div>
     </div>
+</div>
 }
-

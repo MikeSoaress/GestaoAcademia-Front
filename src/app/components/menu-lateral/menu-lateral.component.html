@@ -11,34 +11,34 @@
         <hr>
 
         <div *ngFor="let menu of arrayMenu">
-            @if (menu.submenus.length > 0) 
+            @if (menu.submenus.length > 0)
             {
-                <div id="menu_completo_{{ menu.id_menu }}">
-                    <button name="menu" class="item-menu-colapse" (click)="alternaSubMenu('menu_completo_' + menu.id_menu)">
-                        <div>
-                            <!--  <img class="icone-menu" src="/assets/images/cardapio.png">-->
-                            <span class="legenda">{{menu.legenda_menu}}</span>
-                        </div>
-                        <div>
-                            <img name="icone_menu" class="icone-seta" src="/assets/images/seta-direita.png">
-                        </div>
-                    </button>
-                    <div  name="submenu" class="sub-menu-off">
-                        <div *ngFor="let subMenu of menu.submenus" class="item-menu">
-                            <span [routerLink]="subMenu.url_submenu">{{ subMenu.legenda_submenu }}</span>
-                        </div>
+            <div id="menu_completo_{{ menu.id_menu }}">
+                <button name="menu" class="item-menu-colapse" (click)="alternaSubMenu('menu_completo_' + menu.id_menu)">
+                    <div>
+                        <!--  <img class="icone-menu" src="/assets/images/cardapio.png">-->
+                        <span class="legenda">{{menu.legenda_menu}}</span>
+                    </div>
+                    <div>
+                        <img name="icone_menu" class="icone-seta" src="/assets/images/seta-direita.png">
+                    </div>
+                </button>
+                <div name="submenu" class="sub-menu-off">
+                    <div *ngFor="let subMenu of menu.submenus" class="item-menu">
+                        <span [routerLink]="subMenu.url_submenu">{{ subMenu.legenda_submenu }}</span>
                     </div>
                 </div>
+            </div>
             }
 
             @else
             {
-                <button class="item-menu">
-                    <!--<img class="icone-menu" src="assets/images/equipe.png">-->
-                    <span [routerLink]="menu.url_menu" >{{menu.legenda_menu}}</span>
-                </button>
+            <button class="item-menu">
+                <!--<img class="icone-menu" src="assets/images/equipe.png">-->
+                <span [routerLink]="menu.url_menu">{{menu.legenda_menu}}</span>
+            </button>
             }
-        </div>       
+        </div>
     </div>
 </div>
 

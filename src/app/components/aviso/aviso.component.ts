@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'app-aviso',
-    templateUrl: './aviso.component.html',
-    styleUrls: ['./aviso.component.css'],
-    standalone: true
+  selector: 'app-aviso',
+  templateUrl: './aviso.component.html',
+  styleUrls: ['./aviso.component.css'],
+  standalone: true
 })
 export class AvisoComponent implements OnInit {
   constructor() { }
@@ -18,4 +18,4 @@ export class AvisoComponent implements OnInit {
     this.actionBtnOk.emit();
   }
 
-}
+}  

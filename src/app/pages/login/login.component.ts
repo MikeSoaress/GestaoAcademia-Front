@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener  } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { DeviceService } from '../../services/device.service';
@@ -8,10 +8,10 @@ import { CarregandoComponent } from '../../components/carregando/carregando.comp
 import { MenuService } from '../../services/menu.service';
 
 @Component({
-    selector: 'app-login',
-    imports: [AvisoComponent, FormsModule, CarregandoComponent],
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.css'],
+  selector: 'app-login',
+  imports: [AvisoComponent, FormsModule, CarregandoComponent],
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   abrirIconeCarregando: boolean = false;
@@ -37,18 +37,15 @@ export class LoginComponent implements OnInit {
     if (this.camposValidos()) {
       this.authService.login(this.username, this.password).subscribe(
         (response) => {
-          if (this.authService.isAuthenticated())
-            {
-              this.menuService.loadMenus();
-              this.router.navigate([this.authService.urlInicial]);
-            }
+          if (this.authService.isAuthenticated()) {
+            this.menuService.loadMenus();
+            this.router.navigate([this.authService.urlInicial]);
+          }
 
-          else{
+          else {
             this.abrirIconeCarregando = false;
             this.textoDeAviso = this.authService.avisoCredencialIncorreta;
           }
-
-
         },
         (error) => {
           this.abrirIconeCarregando = false;

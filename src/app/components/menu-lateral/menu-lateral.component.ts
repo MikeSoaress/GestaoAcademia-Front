@@ -5,16 +5,16 @@ import { Menu } from '../../models/menu.interface';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from "@angular/router";
 @Component({
-    selector: 'app-menu-lateral',
-    templateUrl: './menu-lateral.component.html',
-    imports: [CommonModule, RouterModule],
-    styleUrls: ['./menu-lateral.component.css'],
-    standalone: true
+  selector: 'app-menu-lateral',
+  templateUrl: './menu-lateral.component.html',
+  imports: [CommonModule, RouterModule],
+  styleUrls: ['./menu-lateral.component.css'],
+  standalone: true
 })
 export class MenuLateralComponent implements OnInit {
 
   constructor(private router: Router, private menuService: MenuService) { }
-  arrayMenu: Menu[] = []; 
+  arrayMenu: Menu[] = [];
 
   ngOnInit(): void {
     this.getMenu();
@@ -22,41 +22,37 @@ export class MenuLateralComponent implements OnInit {
 
   getMenu(): void {
     this.arrayMenu = this.menuService.getMenus();
-    console.log(this.arrayMenu);
   }
 
   alternaSubMenu(id: string): void {
-    var container_menu = document.getElementById(id);
-    var elemento_menu = container_menu?.querySelector('[name="menu"]');
-    var elemento_submenu = container_menu?.querySelector('[name="submenu"]');
-    var icone_seta = container_menu?.querySelector('[name="icone_menu"]');
+    var container = document.getElementById(id);
+    var menu = container?.querySelector('[name="menu"]');
+    var submenu = container?.querySelector('[name="submenu"]');
+    var iconeSeta = container?.querySelector('[name="icone_menu"]');
 
-    var menu_ativo: boolean = elemento_submenu?.classList.contains('sub-menu-on') ? true : false;
+    var menuAtivo: boolean = submenu?.classList.contains('sub-menu-on') ? true : false;
 
-    menu_ativo ? desabilitarSubMenu() : habilitarSubMenu();
+    menuAtivo ? desabilitarSubMenu() : habilitarSubMenu();
 
     function habilitarSubMenu() {
-      elemento_submenu?.classList.add('sub-menu-on');
-      elemento_menu?.classList.add('item-menu-colapse-on');
-      icone_seta?.classList.add('icone-menu-aberto');
+      submenu?.classList.add('sub-menu-on');
+      menu?.classList.add('item-menu-colapse-on');
+      iconeSeta?.classList.add('icone-menu-aberto');
     }
 
     function desabilitarSubMenu() {
-      elemento_submenu?.classList.remove('sub-menu-on');
-      elemento_menu?.classList.remove('item-menu-colapse-on');
-      icone_seta?.classList.remove('icone-menu-aberto');
+      submenu?.classList.remove('sub-menu-on');
+      menu?.classList.remove('item-menu-colapse-on');
+      iconeSeta?.classList.remove('icone-menu-aberto');
     }
-
-
   }
 
   alternaMenu(): void {
     var elementos_menu = document.getElementById('menu-ocultavel');
     var base_menu = document.getElementById('container-menu');
-    var menu_ativo: boolean = elementos_menu?.classList.contains('ocultar') ? false : true;
-    var menus = localStorage.getItem('menus');
+    var menuAtivo: boolean = elementos_menu?.classList.contains('ocultar') ? false : true;
 
-    menu_ativo ? desabilitarMenu() : habilitarMenu();
+    menuAtivo ? desabilitarMenu() : habilitarMenu();
 
     function habilitarMenu() {
       base_menu?.classList.add('menu-on');
